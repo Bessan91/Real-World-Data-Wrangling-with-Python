@@ -1,0 +1,19 @@
+import os
+
+# Set the Kaggle dataset path
+dataset_path = 'fredericksalazar/pib-gdp-global-by-countries-since-1960-to-2021'
+
+# Download the dataset
+os.system(f'kaggle datasets download -d {dataset_path}')
+
+# Unzip the downloaded dataset
+import zipfile
+
+# The downloaded file will be a zip file
+zip_file_name = 'pib-gdp-global-by-countries-since-1960-to-2021.zip'
+
+# Unzip the downloaded dataset
+with zipfile.ZipFile(zip_file_name, 'r') as zip_ref:
+    zip_ref.extractall('gdp_dataset')
+
+print("GDP dataset downloaded and extracted successfully.")
